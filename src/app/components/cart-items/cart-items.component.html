@@ -1,0 +1,52 @@
+<div class="row">
+        <h4>Available Products in WebSite</h4>
+
+    <li
+    class="list-group-=item"
+    *ngFor="let ap of availableproducts">
+    Name : {{ap.pname}} | qty_Available: {{ap.qty}} | Price : {{ap.price}} <br/>
+
+    </li>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-8">     
+        Search by Product: <input type="text" [(ngModel)]='pname' />
+        quantity: <input type="number" [(ngModel)]='ordered_qty' /> <br/>
+        <button (click)='AddItemtoCartViaService(pname,ordered_qty)'>Search</button>
+        <br/>
+     
+    
+     
+
+    </div>
+
+    <div class="col-md-4">
+        <li
+        class="list-group-=item"
+        *ngFor="let p of x">
+        Name : {{p.pname}} | qty: {{p.ordered_qty}} | Price : {{p.cost}} <br/>
+      
+        </li>
+     
+        <br/>
+        Total Cost : {{total}}
+     
+        <a [routerLink]="['checkout']" [state]="{x,total}">Check out</a>
+
+         </div>
+</div>
+
+   
+
+
+
+
+  
+
+   
+
+  
+  

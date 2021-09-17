@@ -1,0 +1,33 @@
+<p>Enter a new Product to Shopping Cart</p>
+
+Enter ProductName:
+<input type="text" [(ngModel)]='name'/> <br/>
+Enter Product Qty Available:
+<input type="number" [(ngModel)]='qty'/> <br/>
+Enter Product Cost :
+<input type="number" [(ngModel)]='price'/> <br/>
+
+ <br/>
+
+ <button (click)='AddProduct(name,qty,price)' name='adminaction'>Add Product</button>
+
+ <br/>
+
+ <p>Delete the Product</p>
+ Enter ProductName:
+ <input type="text" [(ngModel)]='dname'/> <br/>
+ <br/>
+
+ <button (click)='DeleteProduct(dname)' name='adminaction'>Delete Product</button>
+
+ <br/>
+
+ 
+ <h4>Available Products in WebSite</h4>
+
+ <li
+ class="list-group-=item"
+ *ngFor="let p of products">
+ Name : {{p.pname}} | qty_Available: {{p.qty}} | Price : {{p.price}} <br/>
+
+ </li>

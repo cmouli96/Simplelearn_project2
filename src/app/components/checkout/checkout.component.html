@@ -1,0 +1,26 @@
+<h2>Order Summary </h2>
+
+    <li
+        class="list-group-=item"
+        *ngFor="let p of x">
+        Name : {{p.pname}} | qty: {{p.ordered_qty}} | Price : {{p.cost}} <br/>
+    
+    </li>
+     
+        <br/>
+        Total Cost : {{total}}
+
+<h4>Choose Payment Method:</h4> <br/>
+<input type="radio" name='pmethod'
+(change)='SetMethod("d")' /> Debit Card
+
+<input type="radio" name='pmethod'
+(change)='SetMethod("cr")' /> Credit  Card
+
+<input type="radio" name='pmethod'
+(change)='SetMethod("c")' /> CASH
+
+<br/>
+
+<button (click)='display()'>Complete Transaction</button> <hr/>
+{{msg}}
